@@ -4,7 +4,7 @@
 * Module dependencies.
 */
 
-var app = require('../express_config');
+var app = require('./express_config');
 var debug = require('debug')('locadora:server');
 var http = require('http');
 
