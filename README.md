@@ -125,14 +125,23 @@ Não há termos para essa requisição.
 
 #### RETORNO: Messagem de sucesso ou alerta. json/objeto.
 
+
 #Documentação de erros
 
 \#MV-L14: Banco de dados parou de responder na consulta /list.
+
 \#MV-L66: Banco de dados parou de responder na consulta /search.
+
 \#MV-L82: Banco de dados parou de responder na consulta /rent.
+
 \#MV-L89: Banco de dados parou de responder na consulta /rent.
+
 \#MV-L107: Banco de dados parou de responder na consulta /giveback.
+
 \#MV-L114: Banco de dados parou de responder na consulta /giveback.
+
 \#US-L14: Banco de dados parou de responder na consulta /user/new.
+
 \#US-L27: Banco de dados parou de responder na consulta /user/new.
+
 \#US-L42: Banco de dados parou de responder na consulta /user/login.
