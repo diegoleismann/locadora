@@ -145,3 +145,5 @@ Não há termos para essa requisição.
 \#US-L27: Banco de dados parou de responder na consulta /user/new.
 
 \#US-L42: Banco de dados parou de responder na consulta /user/login.
+
+Desenvolvido por Diego Leismann. &copy; 2016 - Todos direitos reservados. 
