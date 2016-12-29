@@ -59,6 +59,8 @@ __type:__ Define o tipo de pesquisa: String. Padrão: "in".
 ```
 /search?title=batmans&director=burton&type=ex
 ```
+>
+
 __q:__ Pesquisa string no título e no diretor do filme. String. Padrão: null.
 ATENÇÃO: O parametro "q" sobrescreve os termos "title" e "director" na consulta.
 ```
