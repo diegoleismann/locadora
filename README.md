@@ -50,16 +50,16 @@ __director:__ Pesquisa string no diretor do filme. String. Padrão: null.
 
 __type:__ Define o tipo de pesquisa: String. Padrão: "in".
 
-> __"in"__ Inclusiva, pelo menos um termo do "title" ou "director" deve ser válido para ser adicionado ao resultado.
+__"in"__ Inclusiva, pelo menos um termo do "title" ou "director" deve ser válido para ser adicionado ao resultado.
 ```
 /search?title=bastardos&director=stanley&type=in
 ```
-> __"ex"__ Exclusiva, quando os dois "title" e "director" tem que ser válidos para ser adicionado ao resultado.
+ __"ex"__ Exclusiva, quando os dois "title" e "director" tem que ser válidos para ser adicionado ao resultado.
 
 ```
 /search?title=batmans&director=burton&type=ex
 ```
->
+
 
 __q:__ Pesquisa string no título e no diretor do filme. String. Padrão: null.
 ATENÇÃO: O parametro "q" sobrescreve os termos "title" e "director" na consulta.
