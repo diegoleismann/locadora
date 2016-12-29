@@ -52,12 +52,12 @@ __type:__ Define o tipo de pesquisa: String. Padrão: "in".
 
 > __"in"__ Inclusiva, pelo menos um termo do "title" ou "director" deve ser válido para ser adicionado ao resultado.
 ```
-/search?title=bastardos&diretor=stanley&type=in
+/search?title=bastardos&director=stanley&type=in
 ```
 > __"ex"__ Exclusiva, quando os dois "title" e "director" tem que ser válidos para ser adicionado ao resultado.
 
 ```
-/search?title=batmans&diretor=burton&type=ex
+/search?title=batmans&director=burton&type=ex
 ```
 __q:__ Pesquisa string no título e no diretor do filme. String. Padrão: null.
 ATENÇÃO: O parametro "q" sobrescreve os termos "title" e "director" na consulta.
@@ -85,7 +85,7 @@ __movie:__ Termo do id do filme que vai alugar. Obrigatório.
 ## /giveback
 Método: POST. Atualiza o estado do filme para Disponível. Requer Login.
 
-__movie:__ Termo do id do filme que vai "devolvar", tornar disponível novamente. Obrigatório.
+__movie:__ Termo do id do filme que vai "devolver", tornar disponível novamente. Obrigatório.
 ```
 /giveback?movie=60
 ```
