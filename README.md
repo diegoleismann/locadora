@@ -22,9 +22,9 @@ npm start
 #Documentação da API locadora
 
 ## /list
-Método: GET. Listar filmes disponiveis. Público.
+Método: GET. Listar filmes disponíveis. Público.
 
-__page:__ Numero da Página. Inteiro. Padrão: 1.
+__page:__ Número da Página. Inteiro. Padrão: 1.
 ```
 /list?page=8
 ```
@@ -77,7 +77,7 @@ __page:__ Paginação do resultado. Inteiro. Padrão: 1.
 ## /rent
 Método: POST. Atualiza o estado do Filme para Alugado. Requer Login.
 
-__movie:__ Termo do id do filme que vai alugar. Obrigatório.
+__movie:__ Termo id do filme que vai alugar. Obrigatório.
 ```
 /rent?movie=60
 ```
@@ -87,7 +87,7 @@ __movie:__ Termo do id do filme que vai alugar. Obrigatório.
 ## /giveback
 Método: POST. Atualiza o estado do filme para Disponível. Requer Login.
 
-__movie:__ Termo do id do filme que vai "devolver", tornar disponível novamente. Obrigatório.
+__movie:__ Termo id do filme que vai "devolver" ou tornar disponível novamente. Obrigatório.
 ```
 /giveback?movie=60
 ```
@@ -146,4 +146,4 @@ Não há termos para essa requisição.
 
 \#US-L42: Banco de dados parou de responder na consulta /user/login.
 
-Desenvolvido por Diego Leismann. &copy; 2016 - Todos direitos reservados. 
+Desenvolvido por Diego Leismann. &copy; 2016 - Todos direitos reservados.
