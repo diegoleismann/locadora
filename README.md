@@ -19,3 +19,54 @@ npm install
 ```
 npm start
 ```
+#Documentação da API locadora
+
+## /list
+Metodo: GET. Listar filmes disponiveis. Público.
+
+__page:__ Numero da Página. Inteiro. Padrão: 1.
+
+A paginação está configurada com 30 itens por página. Pode ser editado no arquivo /model/movieModel.js Linha 4.
+
+## /search
+Metodo: GET. Pesquisar filmes. Público.
+
+__title:__ Pesquise string no título do filme. String. Padrão: null.
+
+__director:__ Pesquisa string no diretor do filme. String. Padrão: null.
+
+__tipo:__ Define o tipo de pesquisa: String. Padrão: "in".
+
+> __"in"__ Inclusiva, pelo menos um termo do "title" ou "director" deve ser válido para ser adicionado ao resultado.
+> __"ex"_ Exclusiva, quando os dois "title" e "director" tem que ser válidos para ser adicionado ao resultado.
+
+__q:__ Pesquisa string no título e no diretor do filme. String. Padrão: null.
+ATENÇÃO: O parametro "q" sobrescreve os termos "title" e "director" na consulta.
+
+__page:__ Paginação do resultado. Inteiro. Padrão: 1.
+
+## /rent
+Método: POST. Atualiza o estado do Filme para Alugado. Requer Login.
+
+__movie:__ Termo do id do filme que vai alugar. Obrigatório.
+
+## /giveback
+Método: POST. Atualiza o estado do filme para Disponível. Requer Login.
+
+__movie:__ Termo do id do filme que vai "devolvar", tornar disponível novamente. Obrigatório.
+
+## /user/login
+Método: POST. Faz o login de usuário no sistema. Público.
+
+__email:__ E-mail do usuário. Obrigatório.
+__password:__ Palavra-chave do usuário.  Obrigatório.
+
+## /user/new
+Método: POST. Adiciona um novo usuário. Requer Login de Admin. No banco de dados existe usuário com id_user = 1, E-mail __diegoleismann@gmail.com__ e senha __4alltest__. A senhas salvas no banco de dados são protegidas com SHA256.
+
+__email:__ E-mail do novo usuário. Obrigatório.
+__password:__ Palavra-chave do novo usuário. Obrigatório.
+__name:__ Nome de exibição do usuário. Obrigatório.
+
+## /user/logout
+Método: POST. Desloga o usuário.
