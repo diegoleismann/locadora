@@ -22,46 +22,75 @@ npm start
 #Documentação da API locadora
 
 ## /list
-Metodo: GET. Listar filmes disponiveis. Público.
+Método: GET. Listar filmes disponiveis. Público.
 
 __page:__ Numero da Página. Inteiro. Padrão: 1.
+```
+/list?page=8
+```
 
 A paginação está configurada com 30 itens por página. Pode ser editado no arquivo /model/movieModel.js Linha 4.
 
-#### RETURN: Listagem de filmes. json/objeto.
+#### RETORNO: Listagem de filmes disponíveis ou mensagem de alerta. json/objeto.
 
 ## /search
-Metodo: GET. Pesquisar filmes. Público.
+Método: GET. Pesquisar filmes. Público.
 
-__title:__ Pesquise string no título do filme. String. Padrão: null.
+__title:__ Pesquisa string no título do filme. String. Padrão: null.
+
+```
+/search?title=Hellboy
+```
 
 __director:__ Pesquisa string no diretor do filme. String. Padrão: null.
 
-__tipo:__ Define o tipo de pesquisa: String. Padrão: "in".
+```
+/search?director=Tim Burton
+```
+
+__type:__ Define o tipo de pesquisa: String. Padrão: "in".
 
 > __"in"__ Inclusiva, pelo menos um termo do "title" ou "director" deve ser válido para ser adicionado ao resultado.
-> __"ex"_ Exclusiva, quando os dois "title" e "director" tem que ser válidos para ser adicionado ao resultado.
+```
+/search?title=bastardos&diretor=stanley&type=in
+```
+> __"ex"__ Exclusiva, quando os dois "title" e "director" tem que ser válidos para ser adicionado ao resultado.
 
+```
+/search?title=batmans&diretor=burton&type=ex
+```
 __q:__ Pesquisa string no título e no diretor do filme. String. Padrão: null.
 ATENÇÃO: O parametro "q" sobrescreve os termos "title" e "director" na consulta.
+```
+/search?q=tim
+```
 
 __page:__ Paginação do resultado. Inteiro. Padrão: 1.
+```
+/search?q=e&page=2
+```
 
-#### RETURN: Listagem de filmes. json/objeto.
+#### RETORNO: Listagem de filmes ou mensagem de alerta. json/objeto.
 
 ## /rent
 Método: POST. Atualiza o estado do Filme para Alugado. Requer Login.
 
 __movie:__ Termo do id do filme que vai alugar. Obrigatório.
+```
+/rent?movie=60
+```
 
-#### RETURN: Mensagem de sucesso ou alerta. json/objeto.
+#### RETORNO: Mensagem de sucesso ou alerta. json/objeto.
 
 ## /giveback
 Método: POST. Atualiza o estado do filme para Disponível. Requer Login.
 
 __movie:__ Termo do id do filme que vai "devolvar", tornar disponível novamente. Obrigatório.
+```
+/giveback?movie=60
+```
 
-#### RETURN: Mensagem de sucesso ou alerta. json/objeto.
+#### RETORNO: Mensagem de sucesso ou alerta. json/objeto.
 
 ## /user/login
 Método: POST. Faz o login de usuário no sistema. Público.
@@ -69,14 +98,14 @@ Método: POST. Faz o login de usuário no sistema. Público.
 __email:__ E-mail do usuário. Obrigatório.
 __password:__ Palavra-chave do usuário.  Obrigatório.
 
-#### RETURN: Informações do Usuário. json/objeto.
+#### RETORNO: Informações do Usuário ou mensagem de alerta. json/objeto.
 
 ## /user
 Método: GET. Retorna as informações do usuário logado. Requer Login.
 
 Não há termos para essa requisição.
 
-#### RETURN: Informações do Usuário. json/objeto.
+#### RETORNO: Informações do Usuário ou mensagem de alerta. json/objeto.
 
 ## /user/new
 Método: POST. Adiciona um novo usuário. Requer Login de Admin. No banco de dados existe usuário com id_user = 1, E-mail __diegoleismann@gmail.com__ e senha __4alltest__. A senhas salvas no banco de dados são protegidas com SHA256.
@@ -85,9 +114,11 @@ __email:__ E-mail do novo usuário. Obrigatório.
 __password:__ Palavra-chave do novo usuário. Obrigatório.
 __name:__ Nome de exibição do usuário. Obrigatório.
 
-#### RETURN: Messagem de sucesso ou alerta. json/objeto.
+#### RETORNO: Messagem de sucesso ou alerta. json/objeto.
 
 ## /user/logout
 Método: POST. Desloga o usuário.
 
-#### RETURN: Messagem de sucesso ou alerta. json/objeto.
+Não há termos para essa requisição.
+
+#### RETORNO: Messagem de sucesso ou alerta. json/objeto.
